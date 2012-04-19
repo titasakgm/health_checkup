@@ -1,0 +1,31 @@
+<h1>กลุ่มงาน / ฝ่าย</h1>
+
+<%= paginate @sections %>
+<p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ลำดับ</th>
+      <th>กลุ่มงาน / ฝ่าย</th>
+      <th>สร้างเมื่อt</th>
+      <th>เครื่องมือ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 0 %>
+    <% @sections.each do |section| %>
+      <% i += 1 %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= link_to section.section, section_path(section) %></td>
+        <td><%= section.created_at %></td>
+        <td>
+          <%= link_to 'แก้ไข', edit_section_path(section), :class => 'btn btn-mini' %>
+          <%= link_to 'ลบ', section_path(section), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_section_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,12 @@
+<%= simple_form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>งาน / ศูนย์ / สำนัก</legend>
+
+    <%= f.input :job %>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', jobs_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

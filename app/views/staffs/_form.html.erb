@@ -1,0 +1,55 @@
+<%= simple_form_for @staff, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>เจ้าหน้าที่สถาบันสุขภาพเด็กฯ</legend>
+
+    
+    
+    <%= f.input :card_type, :label => "ประเภทบัตรพนักงาน"%>
+    <%= f.input :card_code, :label => "รหัสบัตรพนักงาน"%>
+    <%= f.input :cid, :label => "บัตรประชาชน"%>
+    
+    <%= f.input :sex, :collection => [["ชาย",1],["หญิง",2]], :label => "เพศ"  %>
+
+    <%= f.association :prefix1, :collection => Prefix1.all.map { |r| [r.prefix1, r.id] } ,:label => "คำนำหน้า1" %>
+    <%= f.association :prefix2, :collection => Prefix2.all.map { |r| [r.prefix2, r.id] } ,:label => "คำนำหน้า2" %>
+
+
+    <%= f.input :fname, :label => "ชื่อ" %>
+    <%= f.input :lname, :label => "นามสกุล" %>
+
+    <%= f.association :position, :collection => Position.all.map { |r| [r.position, r.id] } ,:label => "ตำแหน่ง" %>
+    
+    <%= f.association :job, :collection => Job.all.map { |r| [r.job, r.id] } ,:label => "งาน / ศูนย์ / สำนัก" %>
+
+    <%= f.association :section, :collection => Section.all.map { |r| [r.section, r.id] } ,:label => "กลุ่มงาน / ฝ่าย" %>
+    
+    <%= f.input :birth_date, :wrapper => :append,:label => "วันเกิด"   do %>
+        <%= f.text_field :birth_date, :readOnly => true %>
+        <%= content_tag :span, "", :class => "add-on" do %>
+          <%= content_tag :li, "", :class => "icon-th" %>
+        <% end %>
+    <% end %>
+
+    <%= f.input :tel, :label => "เบอร์โทรสำนักงาน" %>
+    
+    <%= f.input :mobile, :label => "เบอร์โทรส่วนตัว" %>
+    
+    <%= f.input :email, :label => "เบอร์โทรส่วนตัว" %>
+
+
+    <%= f.association :boss, :label => 'หัวหน้า', :collection => Staff.all.map { |r| [r.full_name, r.id] } %>
+    
+    
+
+    <div class="form-actions">
+      <%= f.submit "บันทึก", :class => 'btn btn-primary' %>
+      <%= link_to 'ยกเลิก', staffs_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
+
+<script type="text/javascript">
+  $('.date').datepicker({
+    format: "dd/mm/yyyy"
+  })
+</script>

@@ -1,0 +1,12 @@
+<%= simple_form_for @prefix2, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>คำนำหน้า 2</legend>
+
+    <%= f.input :prefix2 %>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', prefix2s_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

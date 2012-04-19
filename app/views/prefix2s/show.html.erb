@@ -1,0 +1,12 @@
+<h1>Prefix2</h1>
+
+<p>
+  <b>Prefix2</b><br>
+  <%= @prefix2.prefix2 %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', prefix2s_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_prefix2_path(@prefix2), :class => 'btn' %>
+  <%= link_to 'Delete', prefix2_path(@prefix2), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

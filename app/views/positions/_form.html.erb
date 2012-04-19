@@ -1,0 +1,12 @@
+<%= simple_form_for @position, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>ตำแหน่ง</legend>
+
+    <%= f.input :position %>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', positions_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

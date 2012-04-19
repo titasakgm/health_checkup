@@ -1,0 +1,10 @@
+<%= simple_form_for  @section, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>กลุ่มงาน / ฝ่าย</legend>
+    <%= f.input :section,:label => "กลุ่มงาน / ฝ่าย" %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', sections_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

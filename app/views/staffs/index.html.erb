@@ -1,0 +1,27 @@
+<h3>เจ้าหน้าที่สถาบันสุขภาพเด็กฯ</h3>
+<%= paginate @staffs %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ชื่อ - นามสกุล</th>
+      <th>ตำแหน่ง</th>
+      <th>หน่วยงาน</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @staffs.each do |staff| %>
+      <tr>
+        <td><%= link_to staff.full_name, staff_path(staff) %></td>
+        <td><%= begin staff.position.position rescue "" end %></td>
+        <td><%= begin staff.section.section rescue "" end %></td>
+        <td>
+          <%= link_to 'แก้ไข', edit_staff_path(staff), :class => 'btn btn-mini' %>
+          <%= link_to 'ลบ', staff_path(staff), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'เพิ่ม', new_staff_path, :class => 'btn btn-primary' %>

@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  card_type: MyString
+  card_code: MyString
+  cid: MyString
+  sex: 1
+  prefix1_id: 1
+  prefix2_id: 1
+  fname: MyString
+  lname: MyString
+  position_id: 1
+  job_id: 1
+  section_id: 1
+  birth_date: 2012-04-18
+  tel: MyString
+  mobile: MyString
+  email: MyString
+  parent_id: 1
+
+two:
+  card_type: MyString
+  card_code: MyString
+  cid: MyString
+  sex: 1
+  prefix1_id: 1
+  prefix2_id: 1
+  fname: MyString
+  lname: MyString
+  position_id: 1
+  job_id: 1
+  section_id: 1
+  birth_date: 2012-04-18
+  tel: MyString
+  mobile: MyString
+  email: MyString
+  parent_id: 1

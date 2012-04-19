@@ -1,0 +1,87 @@
+<h1>Staff</h1>
+
+<p>
+  <b>Card type</b><br>
+  <%= @staff.card_type %>
+</p>
+
+<p>
+  <b>Cid</b><br>
+  <%= @staff.cid %>
+</p>
+
+<p>
+  <b>Sex</b><br>
+  <%= @staff.sex %>
+</p>
+
+<p>
+  <b>Prefix1</b><br>
+  <%= @staff.prefix1_id %>
+</p>
+
+<p>
+  <b>Prefix2</b><br>
+  <%= @staff.prefix2_id %>
+</p>
+
+<p>
+  <b>Fname</b><br>
+  <%= @staff.fname %>
+</p>
+
+<p>
+  <b>Lname</b><br>
+  <%= @staff.lname %>
+</p>
+
+<p>
+  <b>Position</b><br>
+  <%= @staff.position_id %>
+</p>
+
+<p>
+  <b>Job</b><br>
+  <%= @staff.job_id %>
+</p>
+
+<p>
+  <b>Section</b><br>
+  <%= @staff.section_id %>
+</p>
+
+<p>
+  <b>Birth date</b><br>
+  <%= @staff.birth_date %>
+</p>
+
+<p>
+  <b>Tel</b><br>
+  <%= @staff.tel %>
+</p>
+
+<p>
+  <b>Mobile</b><br>
+  <%= @staff.mobile %>
+</p>
+
+<p>
+  <b>Email</b><br>
+  <%= @staff.email %>
+</p>
+
+<p>
+  <b>Parent</b><br>
+  <%= @staff.parent_id %>
+</p>
+
+<p>
+  <b>Card code</b><br>
+  <%= @staff.card_code %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', staffs_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_staff_path(@staff), :class => 'btn' %>
+  <%= link_to 'Delete', staff_path(@staff), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

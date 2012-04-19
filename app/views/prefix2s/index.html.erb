@@ -1,0 +1,26 @@
+<h1>Prefix2s</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Prefix2</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prefix2s.each do |prefix2| %>
+      <tr>
+        <td><%= prefix2.id %></td>
+        <td><%= link_to prefix2.prefix2, prefix2_path(prefix2) %></td>
+        <td><%= prefix2.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_prefix2_path(prefix2), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', prefix2_path(prefix2), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_prefix2_path, :class => 'btn btn-primary' %>
