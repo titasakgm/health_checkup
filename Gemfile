@@ -37,3 +37,4 @@ gem "tabs_on_rails"
 gem 'kaminari'
 #gem 'mongrel'
 gem 'mongrel', '>=1.2.0.pre2'
+gem 'yaml_db'
