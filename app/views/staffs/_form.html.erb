@@ -2,20 +2,18 @@
   <fieldset>
     <legend>เจ้าหน้าที่สถาบันสุขภาพเด็กฯ</legend>
 
+    <%= f.input :card_type, :label => "ประเภทบัตรพนักงาน", :readonly => true %>
+    <%= f.input :card_code, :label => "รหัสบัตรพนักงาน", :readonly => true %>
+    <%= f.input :cid, :label => "บัตรประชาชน", :readonly => true %>
     
-    
-    <%= f.input :card_type, :label => "ประเภทบัตรพนักงาน"%>
-    <%= f.input :card_code, :label => "รหัสบัตรพนักงาน"%>
-    <%= f.input :cid, :label => "บัตรประชาชน"%>
-    
-    <%= f.input :sex, :collection => [["ชาย",1],["หญิง",2]], :label => "เพศ"  %>
+    <%= f.input :sex, :collection => [["ชาย",1],["หญิง",2]], :label => "เพศ" %>
 
     <%= f.association :prefix1, :collection => Prefix1.all.map { |r| [r.prefix1, r.id] } ,:label => "คำนำหน้า1" %>
     <%= f.association :prefix2, :collection => Prefix2.all.map { |r| [r.prefix2, r.id] } ,:label => "คำนำหน้า2" %>
 
 
-    <%= f.input :fname, :label => "ชื่อ" %>
-    <%= f.input :lname, :label => "นามสกุล" %>
+    <%= f.input :fname, :label => "ชื่อ", :readonly => true %>
+    <%= f.input :lname, :label => "นามสกุล", :readonly => true %>
 
     <%= f.association :position, :collection => Position.all.map { |r| [r.position, r.id] } ,:label => "ตำแหน่ง" %>
     
@@ -38,8 +36,6 @@
 
 
     <%= f.association :boss, :label => 'หัวหน้า', :collection => Staff.all.map { |r| [r.full_name, r.id] } %>
-    
-    
 
     <div class="form-actions">
       <%= f.submit "บันทึก", :class => 'btn btn-primary' %>

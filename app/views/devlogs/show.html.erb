@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Url:</b><br />
+  <%= @devlog.url %>
+</p>
+
+<p>
+  <b>Problem:</b><br />
+  <%= @devlog.problem %>
+</p>
+
+<p>
+  <b>Fixing:</b><br />
+  <%= @devlog.fixing %>
+</p>
+
+
+<%= link_to 'Edit', edit_devlog_path(@devlog), :class => 'btn btn-mini' %> |
+<%= link_to 'Back', devlogs_path, :class => 'btn btn-mini' %>

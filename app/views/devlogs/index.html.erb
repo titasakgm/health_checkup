@@ -1,0 +1,31 @@
+<h1>Listing devlogs</h1>
+
+<%= paginate @devlogs %>
+
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>Url</th>
+    <th>Problem</th>
+    <th>Fixing</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @devlogs.each do |devlog| %>
+  <tr>
+    <td><%= devlog.url %></td>
+    <td><%= devlog.problem %></td>
+    <td><%= devlog.fixing %></td>
+    <td><%= link_to 'Edit', edit_devlog_path(devlog), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', devlog, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger' %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Devlog', new_devlog_path, :class => 'btn btn-primary' %>

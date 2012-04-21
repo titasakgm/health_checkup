@@ -1,3 +1,4 @@
+# coding: utf-8
 class Staff < ActiveRecord::Base
   belongs_to :job
   belongs_to :position
@@ -12,8 +13,8 @@ class Staff < ActiveRecord::Base
   has_many :child,
       :class_name => "Staff",
       :foreign_key => "parent_id"
-      
+
   def full_name
-    [fname ,lname].join(" ")
+    "#{fname} #{lname}"
   end
 end

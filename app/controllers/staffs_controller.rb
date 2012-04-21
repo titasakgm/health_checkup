@@ -1,9 +1,18 @@
 class StaffsController < ApplicationController
+  before_filter :authorize
+
   # GET /staffs
   # GET /staffs.json
   set_tab :staff
   def index
-    @staffs = Staff.page(params[:page])
+    if is_admin?
+      @staffs = Staff.page(params[:page])
+    elsif is_boss?
+      @staffs = Staff.where(:job_id => current_user.job_id).page(params[:page])
+    else
+      @staffs = Staff.where(:card_code => session[:card_code]).page(params[:page])
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @staffs }

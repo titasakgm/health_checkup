@@ -6,7 +6,7 @@
       <th>ชื่อ - นามสกุล</th>
       <th>ตำแหน่ง</th>
       <th>หน่วยงาน</th>
-      <th>#</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
       <tr>
         <td><%= link_to staff.full_name, staff_path(staff) %></td>
         <td><%= begin staff.position.position rescue "" end %></td>
-        <td><%= begin staff.section.section rescue "" end %></td>
+        <td><%= begin staff.job.job rescue "" end %></td>
         <td>
           <%= link_to 'แก้ไข', edit_staff_path(staff), :class => 'btn btn-mini' %>
           <%= link_to 'ลบ', staff_path(staff), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>

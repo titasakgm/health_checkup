@@ -1,0 +1,14 @@
+<h1>Sign Up</h1>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username, :label => "รหัสบัตร" %>
+  <%= f.input :roles,
+              :as => :check_boxes, 
+              :collection => ['admin','boss','doctor','staff'],
+              :selected => ['staff']
+   %> 
+  <%= f.input :password %> 
+  <%= f.input :password_confirmation %> 
+  <%= f.button :submit, :class => 'btn btn-primary'  %>
+<% end %>
+

@@ -1,0 +1,13 @@
+<%= simple_form_for(@devlog) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :url, :input_html => { :style => "width:400px" }  %>
+    <%= f.input :problem, :as => :text, :input_html => { :rows => 5, :style => "width:400px;" } %>
+    <%= f.input :fixing, :as => :text, :input_html => { :rows => 5, :style => "width:400px;" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
